@@ -56,11 +56,7 @@ class LTDialog extends LTBase {
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === 'open' && this.#dialog) {
-      if (newValue !== null) {
-        this.show();
-      } else {
-        this.close();
-      }
+      newValue !== null ? this.show() : this.close();
     }
   }
 

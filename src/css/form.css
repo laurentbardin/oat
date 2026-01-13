@@ -106,14 +106,20 @@
     }
   }
 
+  input[type="checkbox"],
+  input[type="radio"] {
+    &:checked {
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
   input[type="checkbox"] {
     border-radius: var(--lt-radius-sm);
 
     &:checked {
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
       background-size: 0.75rem;
-      background-position: center;
-      background-repeat: no-repeat;
     }
   }
 
@@ -123,8 +129,6 @@
     &:checked {
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='4' fill='white'/%3E%3C/svg%3E");
       background-size: 100%;
-      background-position: center;
-      background-repeat: no-repeat;
     }
   }
 
@@ -179,9 +183,8 @@
     display: flex;
     align-items: stretch;
 
-    & > input, & > select {
+    & > * {
       border-radius: 0;
-      flex: 1;
 
       &:first-child {
         border-top-left-radius: var(--lt-radius);
@@ -192,6 +195,10 @@
         border-top-right-radius: var(--lt-radius);
         border-bottom-right-radius: var(--lt-radius);
       }
+    }
+
+    & > input, & > select {
+      flex: 1;
     }
 
     & > span, & > .prefix, & > .suffix {
@@ -205,28 +212,10 @@
 
       &:first-child {
         border-right: none;
-        border-top-left-radius: var(--lt-radius);
-        border-bottom-left-radius: var(--lt-radius);
       }
 
       &:last-child {
         border-left: none;
-        border-top-right-radius: var(--lt-radius);
-        border-bottom-right-radius: var(--lt-radius);
-      }
-    }
-
-    & > button {
-      border-radius: 0;
-
-      &:first-child {
-        border-top-left-radius: var(--lt-radius);
-        border-bottom-left-radius: var(--lt-radius);
-      }
-
-      &:last-child {
-        border-top-right-radius: var(--lt-radius);
-        border-bottom-right-radius: var(--lt-radius);
       }
     }
   }
@@ -238,16 +227,18 @@
       margin-bottom: var(--lt-space-2);
     }
 
-    & > .error, & > [data-error] {
+    & > .error, & > [data-error],
+    & > .hint, & > [data-hint] {
       font-size: var(--lt-text-sm);
-      color: var(--lt-destructive);
       margin-top: var(--lt-space-1);
     }
 
+    & > .error, & > [data-error] {
+      color: var(--lt-destructive);
+    }
+
     & > .hint, & > [data-hint] {
-      font-size: var(--lt-text-sm);
       color: var(--lt-muted-foreground);
-      margin-top: var(--lt-space-1);
     }
   }
 }

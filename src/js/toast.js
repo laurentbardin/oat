@@ -39,14 +39,13 @@ class LTToast extends LTBase {
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    if (name === 'visible') {
-      if (newValue !== null) {
-        this.show();
-      } else {
-        this.close();
-      }
-    } else if (name === 'duration') {
-      this.#duration = parseInt(newValue || '5000', 10);
+    switch (name) {
+      case 'visible':
+        newValue !== null ? this.show() : this.close();
+        break;
+      case 'duration':
+        this.#duration = parseInt(newValue || '5000', 10);
+        break;
     }
   }
 

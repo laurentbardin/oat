@@ -110,6 +110,14 @@ class LTBase extends HTMLElement {
   $$(selector) {
     return Array.from(this.querySelectorAll(selector));
   }
+
+  /**
+   * Generate a unique ID string.
+   * @returns {string}
+   */
+  uid() {
+    return Math.random().toString(36).slice(2, 10);
+  }
 }
 
 // Export for use in other files

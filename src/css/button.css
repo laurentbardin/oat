@@ -81,14 +81,14 @@
     &.icon {
       width: 2.5rem;
       padding: 0;
-    }
 
-    &.icon.sm {
-      width: 2rem;
-    }
+      &.sm {
+        width: 2rem;
+      }
 
-    &.icon.lg {
-      width: 3rem;
+      &.lg {
+        width: 3rem;
+      }
     }
   }
 }

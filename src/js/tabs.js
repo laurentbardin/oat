@@ -32,8 +32,8 @@ class LTTabs extends LTBase {
       const panel = this.#panels[i];
       if (!panel) return;
 
-      const tabId = tab.id || `lt-tab-${this.#uid()}`;
-      const panelId = panel.id || `lt-panel-${this.#uid()}`;
+      const tabId = tab.id || `lt-tab-${this.uid()}`;
+      const panelId = panel.id || `lt-panel-${this.uid()}`;
 
       tab.id = tabId;
       panel.id = panelId;
@@ -49,10 +49,6 @@ class LTTabs extends LTBase {
       t.getAttribute('aria-selected') === 'true'
     );
     this.#activate(activeTab >= 0 ? activeTab : 0);
-  }
-
-  #uid() {
-    return Math.random().toString(36).slice(2, 10);
   }
 
   onclick(event) {

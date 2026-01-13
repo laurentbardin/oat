@@ -17,6 +17,7 @@ class LTDropdown extends LTBase {
   #menu = null;
   #items = [];
   #isOpen = false;
+  #boundDocumentClick = null;
 
   init() {
     this.#trigger = this.$('[data-trigger]');
@@ -30,7 +31,7 @@ class LTDropdown extends LTBase {
     this.#items = this.$$('[data-dropdown-item]');
 
     // Set up ARIA
-    const menuId = this.#menu.id || `lt-menu-${Math.random().toString(36).slice(2, 10)}`;
+    const menuId = this.#menu.id || `lt-menu-${this.uid()}`;
     this.#menu.id = menuId;
     this.#trigger.setAttribute('aria-haspopup', 'true');
     this.#trigger.setAttribute('aria-expanded', 'false');
@@ -49,11 +50,14 @@ class LTDropdown extends LTBase {
     this.#menu.addEventListener('click', this);
 
     // Close on outside click
-    document.addEventListener('click', this.#onDocumentClick.bind(this));
+    this.#boundDocumentClick = this.#onDocumentClick.bind(this);
+    document.addEventListener('click', this.#boundDocumentClick);
   }
 
   cleanup() {
-    document.removeEventListener('click', this.#onDocumentClick.bind(this));
+    if (this.#boundDocumentClick) {
+      document.removeEventListener('click', this.#boundDocumentClick);
+    }
   }
 
   #onDocumentClick(event) {
@@ -160,11 +164,7 @@ class LTDropdown extends LTBase {
   }
 
   toggle() {
-    if (this.#isOpen) {
-      this.close();
-    } else {
-      this.open();
-    }
+    this.#isOpen ? this.close() : this.open();
   }
 
   get open() {

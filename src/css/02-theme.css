@@ -72,7 +72,8 @@
     --lt-z-toast: 300;
   }
 
-  [data-theme="dark"], .dark {
+  [data-theme="dark"],
+  .dark {
     --lt-background: rgb(9 9 11);
     --lt-foreground: rgb(250 250 250);
     --lt-card: rgb(9 9 11);
