@@ -10,6 +10,8 @@
     --lm-secondary-foreground: rgb(24 24 27);
     --lm-muted: rgb(244 244 245);
     --lm-muted-foreground: rgb(113 113 122);
+    --lm-faint: rgb(228 228 231);
+    --lm-faint-foreground: rgb(161 161 170);
     --lm-accent: rgb(244 244 245);
     --lm-accent-foreground: rgb(24 24 27);
     --lm-destructive: rgb(239 68 68);
@@ -89,6 +91,8 @@
     --lm-secondary-foreground: rgb(250 250 250);
     --lm-muted: rgb(39 39 42);
     --lm-muted-foreground: rgb(161 161 170);
+    --lm-faint: rgb(30 30 33);
+    --lm-faint-foreground: rgb(113 113 122);
     --lm-accent: rgb(39 39 42);
     --lm-accent-foreground: rgb(250 250 250);
     --lm-destructive: rgb(127 29 29);
@@ -110,6 +114,8 @@
       --lm-secondary-foreground: rgb(250 250 250);
       --lm-muted: rgb(39 39 42);
       --lm-muted-foreground: rgb(161 161 170);
+      --lm-faint: rgb(30 30 33);
+      --lm-faint-foreground: rgb(113 113 122);
       --lm-accent: rgb(39 39 42);
       --lm-accent-foreground: rgb(250 250 250);
       --lm-destructive: rgb(127 29 29);
