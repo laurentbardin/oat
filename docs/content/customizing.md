@@ -5,7 +5,7 @@ description = "Customize and theme Oat by overriding CSS variables"
 
 Pretty much all properties of Oat are defined as CSS variables that can be overridden. See [theme.css](#) to see all variables. To override, redefine them in a CSS file in your project and include it after the lib's CSS files.
 
-# Picking and choosing
+## Picking and choosing
 
 While it is quite okay to bundle all of Oat given how tiny it is (CSS %KB, JS %KB), it is possible to include components selectively.
 
@@ -128,6 +128,6 @@ After these, include CSS and JS files the respective components.
 
 ---------------
 
-# Dark mode
+## Dark mode
 
 Adding `data-theme="dark"` to `<body>` applies the dark theme. Customize the dark theme by redefining the aforementioned theme variables and scoping them inside `[data-theme="dark"] { ... }`

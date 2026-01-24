@@ -87,10 +87,6 @@
     }
   }
 
-  main {
-    margin-left: 16rem;
-  }
-
   @media (max-width: 768px) {
     aside.sidebar {
       transform: translateX(-100%);

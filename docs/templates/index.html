@@ -3,10 +3,13 @@
 {% block title %}{{ config.extra.description }}{% endblock %}
 
 {% block content %}
-<div style="margin-bottom: var(--space-12);">
-  <p style="margin-bottom: var(--space-8);">
-    <a href="/"><img src="/logo.svg" alt="{{ config.title }}" style="max-height: 75px;"></a>
+<section class="intro">
+  <p class="logo">
+    <a href="/"><img src="/logo.svg" alt="{{ config.title }}"></a>
   </p>
+
+  <h1 class="title">Ultra-lightweight UI library</h1>
+  <h3 class="slogan text-light">Semantic, minimal, zero dependencies. ~8KB CSS and JS.</h3>
 
   <p>
     Oat is an ultra-lightweight HTML + CSS, semantic UI component library with zero dependencies.
@@ -14,35 +17,23 @@
     decent looking web applications with most commonly needed components and elements.
   </p>
   <p>
-    Semantic tags and attributes are styled contextually out of the box without classes, forcing best practices.
-    A few dynamic components are WebComponents and use minimal JavaScript.
-  </p>
-  <hr />
-  <p>
-    This was made this after the unending frustration with the over-engineered bloat, complexity, and dependency-hell of pretty much every
-    Javascript UI library and framework out there; the continuous PTSD of rug-pulls and lockins of the Node.js ecosystem thrash.
-    <sup><a href="https://nadh.in/blog/javascript-ecosystem-software-development-are-a-hot-mess/">[1]</a></sup>
-    I've published this,in case other Node.js ecosystem trauma victims find it useful.
-  </p>
-  <p>
-    My goal is a simple, minimal, vanilla, standards-based UI library that I can use in my own projects for the long term without having to
-    worry about thrash. Long term because it's just simple vanilla CSS and JS, along with a few other
-    zero-dependecy <a href="/other-libs">Javascript libs</a> that I maintain. Look and feel is influenced by the shadcn aesthetic.
+    Semantic tags and attributes are styled contextually out of the box without classes, forcing best practices, and reducing
+    markup class pollution. A few dynamic components are WebComponents and use minimal JavaScript.
   </p>
   <br />
-  <div>
+  <div class="hstack">
     <a href="/components/" class="button">Browse components</a>
     <a href="/usage/" class="button outline">Get started</a>
   </div>
-</div>
+</section>
 
-<div
-  style="display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fit, 1fr); margin-bottom: var(--space-12);">
+<section style="display: grid; gap: var(--space-8); grid-template-columns: repeat(2, 1fr); margin-bottom: var(--space-12);">
   <article class="card">
     <header>
       <h3>Light like an oat flake</h3>
     </header>
-    <p><strong>6 KB</strong> CSS, <strong>2.2 KB</strong> JS, minified + gzipped. That's it.</p>
+    <p><strong>6KB</strong> CSS, <strong>2.2KB</strong> JS, minified + gzipped.</p>
+    <p>That's it.</p>
   </article>
 
   <article class="card">
@@ -77,7 +68,24 @@
     <p>Easily customize the overall theme by overriding a handful of CSS variables. <code>data-theme="dark"</code> on body
       automatically uses the bundled dark theme.</p>
   </article>
+</section>
 
-</div>
+<br />
+
+<section>
+  <h2>Why?</h2>
+  <p>
+    This was made this after the unending frustration with the over-engineered bloat, complexity, and dependency-hell of pretty much every
+    Javascript UI library and framework out there; the continuous PTSD of rug-pulls and lockins of the Node.js ecosystem trash.
+    <sup><a href="https://nadh.in/blog/javascript-ecosystem-software-development-are-a-hot-mess/">[1]</a></sup>
+    I've published this,in case other Node.js ecosystem trauma victims find it useful.
+  </p>
+  <p>
+    My goal is a simple, minimal, vanilla, standards-based UI library that I can use in my own projects for the long term without having to
+    worry about trash. Long term because it's just simple vanilla CSS and JS, along with a few other
+    zero-dependecy <a href="/other-libs">Javascript libs</a> that I maintain. Look and feel is influenced by the shadcn aesthetic.
+  </p>
+  <br />
+</section>
 
 {% endblock %}
