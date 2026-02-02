@@ -1,11 +1,12 @@
 @layer components {
   :root {
     --topnav-height: var(--space-12);
+    --sidebar-width: 14rem;
   }
 
   [data-sidebar-layout] {
     display: grid;
-    grid-template-columns: 16rem 1fr;
+    grid-template-columns: var(--sidebar-width) 1fr;
     min-height: 100dvh;
     gap: var(--space-4);
 
@@ -30,13 +31,14 @@
     > aside[data-sidebar] {
       position: sticky;
       top: 0;
-      z-index: 5;
+      z-index: 1;
       height: 100dvh;
       align-self: start;
       background-color: var(--background);
       border-right: 1px solid var(--border);
       display: flex;
       flex-direction: column;
+      width: var(--sidebar-width);
 
       > header {
         flex-shrink: 0;
@@ -118,7 +120,7 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 10;
+    z-index: 5;
     min-height: var(--topnav-height);
     display: flex;
     align-items: center;
@@ -152,7 +154,6 @@
         left: 0;
         height: 100dvh;
         width: 16rem;
-        z-index: var(--z-dropdown);
         transform: translateX(-100%);
         transition: transform var(--transition);
         box-shadow: var(--shadow-large);
